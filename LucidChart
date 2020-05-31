@@ -1,0 +1,13 @@
+The CharacterFactory needed to be able to create any of the characters that we needed to build in the array. 
+(referencing the assignment from OO-Java course)
+9:10
+So I just added create methods for each type of character
+9:13
+For the CharacterArray - the name of this class may not be intuitive? I changed it from CharacterArray<T> because we would need to know the value being passed in for 'T' within the class, and that apparently isn't as easy as I thought it was. So I modified it so the constructor takes in a type from the user (Zombie or Survivor), and based on what is type is passed into the constructor, the randomCharacter method will produce a random zombie or random survivor.
+9:14
+Also, isDead returns a boolean. I thought this would make it easier/more intuitive to do something like (char.isDead() ){ //do something} instead of (char.getHealth() == 0){}
+9:19
+Roger, do you want to manage the github version for the diagram?  You mentioned that you created something, but I don't see it (if you did share it)
+9:24
+I see it now. But I the fork, create new file, and upload files buttons are disabled
+https://app.lucidchart.com/documents/view/44fd5c83-faf7-47d3-b2a6-b64a1ba9ae5f
