@@ -1,11 +1,12 @@
 package com.csc422.zombiewar;
 
 /**
- *
+ *y
  * @authors Roger, Adrian, Patrick, & Caitlin Course: CSC422 Software
  * Engineering Week: 5 Assignment: ZombieWar Coding from UML Diagram
  */
-public abstract class Character {
+public abstract class Character
+{
 
     private int health;
     private int attack;
@@ -16,8 +17,10 @@ public abstract class Character {
      * @param health
      * @param attack
      */
-    public Character(int health, int attack) {
-
+    public Character(int health, int attack)
+    {
+        this.health = health;
+        this.attack = attack;
     }
 
     /**
@@ -25,8 +28,9 @@ public abstract class Character {
      *
      * @param health
      */
-    public void setHealth(int health) {
-
+    public void setHealth(int health)
+    {
+        this.health = health;
     }
 
     /**
@@ -34,22 +38,25 @@ public abstract class Character {
      *
      * @param attack
      */
-    public void setAttack(int attack) {
-
+    public void setAttack(int attack)
+    {
+        this.attack = attack;
     }
 
     /**
      * @return the health value of the character
      */
-    public int getHealth() {
-        return 0;
+    public int getHealth()
+    {
+        return health;
     }
 
     /**
      * @return the attack value of the character
      */
-    public int getAttack() {
-        return 0;
+    public int getAttack()
+    {
+        return attack;
     }
 
     /**
@@ -60,13 +67,18 @@ public abstract class Character {
      *
      * @param c - the other character
      */
-    public void attack(Character c) {
-
+    public void attack(Character c)
+    {
+        c.setHealth((c.getHealth()) - (this.attack));
     }
 
     /* @return true if this character is dead, otherwise return false */
-    public boolean isDead() {
+    public boolean isDead(Character c)
+    {
+        if (c.getHealth() <= 0)
+        {
+            return true;
+        }
         return false;
     }
-
 }
