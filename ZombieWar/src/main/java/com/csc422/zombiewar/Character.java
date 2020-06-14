@@ -62,8 +62,7 @@ public abstract class Character
     /**
      * Simulates this.character attacking another character It reduces the
      * attacked characters health by the attack value of the attacker and sets
-     * the new health to the difference, or if sets the health to 0 if the
-     * health would be less than 0.
+     * the new health to the difference.
      *
      * @param c - the other character
      */
