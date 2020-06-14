@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class SurvivorArrayFactory {
 
-    Random rand;
-    private int totalChildren = 0;
+    Random rand = new Random();
+    private int totalChild = 0;
     private int totalTeacher = 0;
     private int totalSoldier = 0;
 
@@ -19,36 +19,37 @@ public class SurvivorArrayFactory {
      */
     public ArrayList<Survivor> makeSurvivorArray() {
         ArrayList<Survivor> survivor = new ArrayList<>();
-    }
+    
     
     //Creates random number 1-20 Survivors 
-    int randomNumber = rand.NextInt(20) + 1;
+    int randNumb = rand.nextInt(20) + 1;
     //
     for (int i = 0; i < randomNumber; i++) {
 
         // Creates a random number (0 or 1)
-        int randNumber = rand.nextInt(2);
+        int randNumb = rand.nextInt(3);
 
         // Create random # of Survivors and increment total
-        if (randomNumber == 0) {
-            survivor.add(new Children());
-            totalChildren++;
-        } else if{
+        if (randNumber == 0) {
+            survivor.add(new Child());
+            totalChild++;
+        } else if(randNumber == 1)
             survivor.add(new Teacher());
             totalTeacher++;
         } else {
         	survivor.add(new Soldier());
         	totalSoldier++
+    };
     }
     
-    return Survivors;
+    return survivor;
 }
     
     /**
      * @return the total number of child survivors
      */
     public int getTotalChildren() {
-        return totalChildren;
+        return totalChild;
     }
 
     /**
