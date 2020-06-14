@@ -10,6 +10,7 @@ public abstract class Character
 
     private int health;
     private int attack;
+    private int id;
 
     /**
      * Constructor
@@ -42,6 +43,11 @@ public abstract class Character
     {
         this.attack = attack;
     }
+    
+    public void setId(int id)
+    {
+      this.id = id;
+    }
 
     /**
      * @return the health value of the character
@@ -58,6 +64,11 @@ public abstract class Character
     {
         return attack;
     }
+    
+    public int getId()
+    {
+      return id;
+    }
 
     /**
      * Simulates this.character attacking another character It reduces the
@@ -66,7 +77,7 @@ public abstract class Character
      *
      * @param c - the other character
      */
-    public void attack(Character c)
+    public void attacks()
     {
         c.setHealth((c.getHealth()) - (this.attack));
     }
