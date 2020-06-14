@@ -29,10 +29,10 @@ public class ZombieArrayFactory {
 
             // Create random zombie and increment total
             if (randNum == 0) {
-                zombies.add(new CommonInfect());
+                zombies.add(new CommonInfect(totalCommonInfect));
                 totalCommonInfect++;
             } else {
-                zombies.add(new Tank());
+                zombies.add(new Tank(totalTank));
                 totalTank++;
             }
         }

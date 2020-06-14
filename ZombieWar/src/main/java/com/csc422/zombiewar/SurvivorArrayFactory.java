@@ -29,17 +29,21 @@ public class SurvivorArrayFactory {
         // Creates a random number (0, 1 & 2)
         int randNumber = rand.nextInt(3);
 
-        // Create random # of Survivors and increment total
-        if (randNumber == 0) {
-            survivor.add(new Child());
-            totalChild++;
-        } else if(randNumber == 1){
-            survivor.add(new Teacher());
-            totalTeacher++;
-        } else{
-        	survivor.add(new Soldier());
-        	totalSoldier++;
-        }
+            // Create random # of Survivors and increment total
+            switch (randNumber) {
+                case 0:
+                    survivor.add(new Child(totalChild));
+                    totalChild++;
+                    break;
+                case 1:
+                    survivor.add(new Teacher(totalTeacher));
+                    totalTeacher++;
+                    break;
+                default:
+                    survivor.add(new Soldier(totalSoldier));
+                    totalSoldier++;
+                    break;
+            }
         
     }
     
