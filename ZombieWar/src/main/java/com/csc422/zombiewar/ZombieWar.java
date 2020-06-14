@@ -1,3 +1,4 @@
+package com.csc422.zombiewar;
 import java.util.*;
 
 public class ZombieWar{
