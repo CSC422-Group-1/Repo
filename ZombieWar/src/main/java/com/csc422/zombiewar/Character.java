@@ -72,9 +72,9 @@ public abstract class Character
     }
 
     /* @return true if this character is dead, otherwise return false */
-    public boolean isDead(Character c)
+    public boolean isDead()
     {
-        if (c.getHealth() <= 0)
+        if (getHealth() <= 0)
         {
             return true;
         }
