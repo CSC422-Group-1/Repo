@@ -1,43 +1,52 @@
-package com.csc422.zombiewar;
+import java.util.*;
 
-import java.util.ArrayList;
+public class ZombieWar{
+  static int aL;
+  static int dL;
 
-public class ZombieWar {
-
-    ArrayList<Zombie> zombies;
-    ArrayList<Survivor> survivors;
-
-    /**
-     * Runs the battles between Zombies and Survivors until one of the sides has
-     * no living characters.
-     */
-    private void start() {
-
+  public static void main(String[] args){
+    start();
+  }
+  
+  public static void start(){
+    ZombieArrayFactory zFactory = new ZombieArrayFactory();
+    ArrayList<Zombie> zombies= zFactory.makeZombieArray(); 
+    //zombies.forEach(zombie->System.out.println(zombie.getClass()+" "+zombie.getHealth()));
+  
+    SurvivorArrayFactory sFactory = new SurvivorArrayFactory();
+    ArrayList<Survivor> survivors= sFactory.makeSurvivorArray(); 
+    //survivors.forEach(survivor->System.out.println(survivor.getClass()+" "+survivor.getHealth()));
+  
+    System.out.print("We have "+survivors.size()+" survivors trying to make it to safety.\n"+
+    "\nBut there are "+zombies.size()+" zombies waiting for them.\n"
+    );
+    
+    setSize(survivors,zombies);
+    battle(survivors,zombies);
+    setSize(zombies,survivors);
+    battle(zombies,survivors);
+    System.out.println("It seems "+survivors.size()+" have made it to safety.");
+    
     }
 
-    /**
-     * Battles two characters and prints out if one of the second character was
-     * killed in the battle. (c1 only battles c2 if they are both alive)
-     *
-     * @param c1
-     * @param c2
-     */
-    private void battle(Character c1, Character c2) {
-
+   @SuppressWarnings("unchecked")
+  static void battle(ArrayList<? extends Character> attacker, ArrayList<? extends Character> defender){
+  for(int a =0; a<aL;a++){
+    for(int d=0;d<dL;d++){
+         attacker.get(a).attack(defender.get(d));
+         if(defender.get(d).isDead()==true){
+          defender.remove(d);
+          setSize(attacker,defender);
+          d--;
+        }
+      }
     }
+  }
+  
 
-    /**
-     * prints the remaining zombies or survivors
-     */
-    private void printSurvivor() {
-
-    }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-
+  static void  setSize(ArrayList<? extends Character> attacker, ArrayList<? extends Character> defender){
+    aL = attacker.size();
+    dL = defender.size();
+  }
+//end of class
 }
