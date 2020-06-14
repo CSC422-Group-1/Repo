@@ -26,7 +26,7 @@ public class ZombieWar{
     battle(survivors,zombies);
     setSize(zombies,survivors);
     battle(zombies,survivors);
-    System.out.println("It seems "+survivors.size()+" have made it to safety.");
+    System.out.println("\nIt seems "+survivors.size()+" have made it to safety.");
     
     }
 
