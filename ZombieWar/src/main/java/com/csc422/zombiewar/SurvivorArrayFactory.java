@@ -13,7 +13,7 @@ public class SurvivorArrayFactory {
 
     /**
      * Generates a random sized array list of random survivors
-     * (Children/Teacher/Soldier).
+     * (Child/Teacher/Soldier).
      *
      * @return an ArrayList of Survivors.
      */
@@ -24,10 +24,10 @@ public class SurvivorArrayFactory {
     //Creates random number 1-20 Survivors 
     int randNumb = rand.nextInt(20) + 1;
     //
-    for (int i = 0; i < randomNumber; i++) {
+    for (int i = 0; i < randNumb; i++) {
 
-        // Creates a random number (0 or 1)
-        int randNumb = rand.nextInt(3);
+        // Creates a random number (0, 1 & 2)
+        int randNumber = rand.nextInt(3);
 
         // Create random # of Survivors and increment total
         if (randNumber == 0) {
@@ -36,7 +36,7 @@ public class SurvivorArrayFactory {
         } else if(randNumber == 1)
             survivor.add(new Teacher());
             totalTeacher++;
-        } else {
+        } else if(randNumber == 2)
         	survivor.add(new Soldier());
         	totalSoldier++
     };
