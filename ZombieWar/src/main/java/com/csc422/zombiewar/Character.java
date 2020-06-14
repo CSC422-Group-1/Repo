@@ -62,8 +62,7 @@ public abstract class Character
     /**
      * Simulates this.character attacking another character It reduces the
      * attacked characters health by the attack value of the attacker and sets
-     * the new health to the difference, or if sets the health to 0 if the
-     * health would be less than 0.
+     * the new health to the difference.
      *
      * @param c - the other character
      */
@@ -73,9 +72,9 @@ public abstract class Character
     }
 
     /* @return true if this character is dead, otherwise return false */
-    public boolean isDead(Character c)
+    public boolean isDead()
     {
-        if (c.getHealth() <= 0)
+        if (getHealth() <= 0)
         {
             return true;
         }
