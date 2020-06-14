@@ -33,13 +33,14 @@ public class SurvivorArrayFactory {
         if (randNumber == 0) {
             survivor.add(new Child());
             totalChild++;
-        } else if(randNumber == 1)
+        } else if(randNumber == 1){
             survivor.add(new Teacher());
             totalTeacher++;
-        } else if(randNumber == 2)
+        } else{
         	survivor.add(new Soldier());
-        	totalSoldier++
-    };
+        	totalSoldier++;
+        }
+        
     }
     
     return survivor;
