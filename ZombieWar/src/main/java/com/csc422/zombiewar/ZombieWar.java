@@ -34,7 +34,7 @@ public class ZombieWar{
   for(int a =0; a<aL;a++){
     for(int d=0;d<dL;d++){
          attacker.get(a).attack(defender.get(d));
-         if(defender.get(d).isDead(defender.get(d))==true){
+         if(defender.get(d).isDead()==true){
           defender.remove(d);
           setSize(attacker,defender);
           d--;
