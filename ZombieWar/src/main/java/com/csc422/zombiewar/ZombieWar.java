@@ -1,9 +1,15 @@
 import java.util.*;
-
+{
+   
 public class ZombieWar{
+   
   static int aL;
   static int dL;
-  
+
+  public static void main(String[] args){
+    start();
+  }
+
   public static void start(){
     ZombieArrayFactory zFactory = new ZombieArrayFactory();
     ArrayList<Zombie> zombies= zFactory.makeZombieArray(); 
