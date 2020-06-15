@@ -66,7 +66,7 @@ public abstract class Character
      *
      * @param c - the other character
      */
-    public void attack(Character c)
+    public void attacks(Character c)
     {
         c.setHealth((c.getHealth()) - (this.attack));
     }
