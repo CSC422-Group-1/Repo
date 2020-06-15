@@ -22,10 +22,14 @@ public class ZombieWar{
     "\nBut there are "+zombies.size()+" zombies waiting for them.\n"
     );
     
-    setSize(survivors,zombies);
-    battle(survivors,zombies);
-    setSize(zombies,survivors);
-    battle(zombies,survivors);
+    //continue battle until one of the sides has no more living members
+    do{
+        setSize(survivors,zombies);
+        battle(survivors,zombies);
+        setSize(zombies,survivors);
+        battle(zombies,survivors);
+    }while(!survivors.isEmpty() && !zombies.isEmpty());
+    
     System.out.println("\nIt seems "+survivors.size()+" have made it to safety.");
     
     }
