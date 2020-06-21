@@ -1,5 +1,9 @@
-package com.csc422.zombiewar;
+package com.csc422.zombiewar.factories;
 
+import com.csc422.zombiewar.characters.Soldier;
+import com.csc422.zombiewar.characters.Survivor;
+import com.csc422.zombiewar.characters.Child;
+import com.csc422.zombiewar.characters.Teacher;
 import java.util.ArrayList;
 import java.util.Random;
 
