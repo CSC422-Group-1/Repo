@@ -1,0 +1,14 @@
+Release 3.0
+
+Add weapons.  The weapon cache is randomly generated.  The survivors randomly picked a weapon.  Each weapon has different damage level and accuracy.    For example, shot gun does more damage than a pistol but less accurate.  Sometimes the shotgun will miss the target.  You are free to choose the damage level and accuracy for each weapon.   The sample run is similar to release 2 but it should indicate the weapon used to kill an infected.
+
+ 
+
+Some weapons from the game include:
+Shotgun
+Submachine gun
+Assault Rifle
+Pistal
+Axe
+Crowbar
+Frying Pan
