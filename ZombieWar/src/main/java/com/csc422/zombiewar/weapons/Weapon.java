@@ -1,3 +1,5 @@
+package com.csc422.zombiewar.weapons;
+
 public abstract class Weapon implements Comparable<Weapon>{
     private Integer damage;
     private Integer accuracy;
