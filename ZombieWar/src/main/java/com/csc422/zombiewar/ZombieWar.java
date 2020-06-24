@@ -1,4 +1,9 @@
 package com.csc422.zombiewar;
+import com.csc422.zombiewar.factories.ZombieArrayFactory;
+import com.csc422.zombiewar.factories.SurvivorArrayFactory;
+import com.csc422.zombiewar.characters.Survivor;
+import com.csc422.zombiewar.characters.Character;
+import com.csc422.zombiewar.characters.Zombie;
 import java.util.*;
 
 public class ZombieWar{

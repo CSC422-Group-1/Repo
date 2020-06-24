@@ -1,4 +1,4 @@
-package com.csc422.zombiewar;
+package com.csc422.zombiewar.characters;
 
 public class Zombie extends Character {
 

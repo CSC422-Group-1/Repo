@@ -1,5 +1,8 @@
-package com.csc422.zombiewar;
+package com.csc422.zombiewar.factories;
 
+import com.csc422.zombiewar.characters.CommonInfect;
+import com.csc422.zombiewar.characters.Tank;
+import com.csc422.zombiewar.characters.Zombie;
 import java.util.ArrayList;
 import java.util.Random;
 
