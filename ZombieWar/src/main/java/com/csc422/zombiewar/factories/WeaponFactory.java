@@ -1,6 +1,6 @@
 package com.csc422.zombiewar.factories;
 
-import com.csc422.zombiewar.weapons.Weapon;
+import com.csc422.zombiewar.weapons.*;
 import java.util.ArrayList;
 import java.util.Random;
 
