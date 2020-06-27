@@ -1,19 +1,23 @@
 package com.csc422.zombiewar.characters;
 
+import com.csc422.zombiewar.weapons.Weapon;
+
 public class Child extends Survivor
 {
     private int objID = 0;
     
-    public Child(int ID)
+    public Child(int ID, Weapon weapon)
     {
-        super(/*health*/ 20,/*attack*/ 2);
+        super(/*health*/20,/*attack*/2,weapon);
         this.objID = ID;
+       
     }
     
-    @Override
-    public String toString()
+    public Child(int ID)
     {
-        return "Child " + objID;
+        super(/*health*/ 20,/*attack*/2);
+        this.objID = ID;
     }
+
 
 }
