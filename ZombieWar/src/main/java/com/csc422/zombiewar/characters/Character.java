@@ -36,8 +36,13 @@ public abstract class Character
     public Character(int health, int attack, Weapon weapon)
     {
         this.health = health;
-        this.attack = attack;
+        this.attack=attack;
         this.weapon = weapon;
+        if((weapon.getClass().getSimpleName().equals("FryingPan")|weapon.getClass().getSimpleName().equals("CrowBar")|weapon.getClass().getSimpleName().equals("Axe"))){
+              this.attack+=weapon.getDamage();
+          }else{
+              this.attack=weapon.getDamage();
+          }
     }
 
     /**
@@ -79,7 +84,9 @@ public abstract class Character
     public Weapon getWeapon(){
       return weapon;
     }
-
+    public int getID(){
+        return this.objID;
+    }
     /**
      * Simulates this.character attacking another character It reduces the
      * attacked characters health by the attack value of the attacker and sets
@@ -91,14 +98,15 @@ public abstract class Character
     {
       if(weapon!=null){
         if(landedHit()==true){
-          if((weapon.getClass().getSimpleName().equals("FryingPan")|weapon.getClass().getSimpleName().equals("CrowBar")|weapon.getClass().getSimpleName().equals("Axe"))){
-              this.attack=weapon.getDamage();
-          }else{
-              this.attack+=weapon.getDamage();
-          }
-      }
+            System.out.println("Hit!");
+            c.setHealth((c.getHealth()) - (this.attack));
+        }else{
+            System.out.println("Miss!");
+        }
+       }else{
+      System.out.println("Punch!");
       c.setHealth((c.getHealth()) - (this.attack));
-    }
+      }
     }
 
     /* @return true if this character is dead, otherwise return false */
@@ -109,13 +117,19 @@ public abstract class Character
 
     public boolean landedHit(){
       int modifier =0; //accuracy modifier
-      switch(this.getAttack()){
-        case 10: modifier = 10;
-        case 5: modifier = 45;
-        case 2: modifier = 85;
+      switch(this.getClass().getSimpleName()){
+        case "Soldier": modifier = 10;
+        break;
+        case "Teacher": modifier = 45;
+        break;
+        case "Child": modifier = 85;
+        break;
       }
-      int rand = (int)(java.lang.Math.random()*weapon.getAccuracy()*10/modifier);
-      //int range = weapon.getAccuracy()+1;
+      int rand = (int)(Math.round(java.lang.Math.random()*weapon.getAccuracy()/(double)modifier*10));
+      //rand*=weapon.getAccuracy();
+      //modifier=(rand/modifier)*10;
+      System.out.println("acurracy: "+weapon.getAccuracy()+" divided by modifier: "+modifier+" equals "+rand);
+      if(rand!=0){System.out.println("True");}else{System.out.println("False");};
       return rand!=0;
     }
 
@@ -127,7 +141,7 @@ public abstract class Character
   public String toString(){
     String j = this.getClass().getSimpleName()+" "+this.objID;
     j+=this.getWeapon()!=null?" with ":" ";
-    j+=this.getWeapon()!=null?this.getWeapon().getClass().getSimpleName().startsWith("a")?"an ":"a ":"";
+    j+=this.getWeapon()!=null?this.getWeapon().getClass().getSimpleName().startsWith("A")?"an ":"a ":"";
     j+=this.getWeapon()!=null?this.getWeapon().getClass().getSimpleName():"";
     return j;
   }
