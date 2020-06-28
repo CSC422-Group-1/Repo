@@ -37,7 +37,7 @@ public class WeaponFactory {
                     cache.add(new Shotgun());
                     break;
                 case 1:
-                    cache.add(new SubMachineGun());
+                    cache.add(new SubmachineGun());
                     break;
                 case 2:
                     cache.add(new AssaultRifle());

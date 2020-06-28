@@ -10,7 +10,6 @@ public class Child extends Survivor
     {
         super(/*health*/20,/*attack*/2,weapon);
         this.objID = ID;
-       
     }
     
     public Child(int ID)
