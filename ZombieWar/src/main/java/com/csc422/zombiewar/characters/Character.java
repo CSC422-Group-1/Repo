@@ -98,13 +98,10 @@ public abstract class Character
     {
       if(weapon!=null){
         if(landedHit()==true){
-            System.out.println("Hit!");
             c.setHealth((c.getHealth()) - (this.attack));
         }else{
-            System.out.println("Miss!");
         }
        }else{
-      System.out.println("Punch!");
       c.setHealth((c.getHealth()) - (this.attack));
       }
     }
@@ -126,10 +123,6 @@ public abstract class Character
         break;
       }
       int rand = (int)(Math.round(java.lang.Math.random()*weapon.getAccuracy()/(double)modifier*10));
-      //rand*=weapon.getAccuracy();
-      //modifier=(rand/modifier)*10;
-      System.out.println("acurracy: "+weapon.getAccuracy()+" divided by modifier: "+modifier+" equals "+rand);
-      if(rand!=0){System.out.println("True");}else{System.out.println("False");};
       return rand!=0;
     }
 
