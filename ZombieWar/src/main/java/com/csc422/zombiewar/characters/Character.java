@@ -20,11 +20,13 @@ public abstract class Character
      *
      * @param health
      * @param attack
+     * @param ID
      */
     
-    public Character(int health, int attack){
+    public Character(int health, int attack, int ID){
         this.health=health;
         this.attack=attack;
+        this.objID = ID;
     } 
     /**
      * Constructor
@@ -33,11 +35,12 @@ public abstract class Character
      * @param attack
      * @param weapon
      */
-    public Character(int health, int attack, Weapon weapon)
+    public Character(int health, int attack, Weapon weapon, int ID)
     {
         this.health = health;
         this.attack=attack;
         this.weapon = weapon;
+        this.objID = ID;
         if((weapon.getClass().getSimpleName().equals("FryingPan")|weapon.getClass().getSimpleName().equals("CrowBar")|weapon.getClass().getSimpleName().equals("Axe"))){
               this.attack+=weapon.getDamage();
           }else{
