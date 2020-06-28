@@ -12,8 +12,9 @@ public class ZombieWar{
 
   public static void main(String[] args){
     start();
+
   }
-  
+
   public static void start(){
     ZombieArrayFactory zFactory = new ZombieArrayFactory();
     ArrayList<Zombie> zombies= zFactory.makeZombieArray(); 
@@ -64,11 +65,8 @@ public class ZombieWar{
   for(int a =0; a<aL;a++){
     for(int d=0;d<dL;d++){
       Character A = attacker.get(a);
-      //String Attacker=A.getClass().getName()+" "+A.getId();
       Character D = defender.get(d);
-     // String Defender = D.getClass().getName()+" "+D.getId();
       A.attacks(D);
-      //System.out.println("d= "+d+" "+Attacker+" attacks "+Defender+" defender size ="+defender.size());
       boolean check = checkPulse(attacker,defender,a,d);
       if(check==true){d--;}
     }
@@ -78,8 +76,11 @@ public class ZombieWar{
   static boolean checkPulse(ArrayList<? extends Character> attacker, ArrayList<? extends Character> defender,int a,int d){ 
     boolean isDead = defender.get(d).isDead();
       if(isDead==true){
-          System.out.println(attacker.get(a).toString() + " killed " + defender.get(d).toString());
+          String defString="";
+              defString+=defender.get(d).getClass().getSimpleName();
+              defString+=" "+defender.get(d).getID();
 
+          System.out.println(attacker.get(a).toString() + " killed " + defString);
           defender.remove(d);
           setSize(attacker,defender);
           //System.out.println("defender size NOW = "+defender.size());     
