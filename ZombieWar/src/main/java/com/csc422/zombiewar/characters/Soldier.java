@@ -18,11 +18,5 @@ public class Soldier extends Survivor
         this.objID = ID;
     }
 
-    @Override
-    public String toString()
-    {
-        return "Soldier " + objID;
-    }
-
 }
 

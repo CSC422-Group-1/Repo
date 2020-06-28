@@ -9,12 +9,12 @@ public class Tank extends Zombie
         super(/*health*/150,/*attack*/ 20);
         this.objID = ID;
     }
-
+    /*
     @Override
     public String toString()
     {
         return "Tank " + objID;
     }
-
+    */
 }
 

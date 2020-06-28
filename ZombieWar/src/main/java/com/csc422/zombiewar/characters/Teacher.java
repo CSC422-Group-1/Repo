@@ -18,10 +18,4 @@ public class Teacher extends Survivor
         this.objID = ID;
     }
 
-    @Override
-    public String toString()
-    {
-        return "Teacher " + objID;
-    }
-
 }

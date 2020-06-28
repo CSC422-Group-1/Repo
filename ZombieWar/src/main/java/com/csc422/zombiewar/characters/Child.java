@@ -8,7 +8,7 @@ public class Child extends Survivor
     
     public Child(int ID, Weapon weapon)
     {
-        super(/*health*/20,/*attack*/2, weapon);
+        super(/*health*/20,/*attack*/2,weapon);
         this.objID = ID;
     }
     
@@ -17,11 +17,6 @@ public class Child extends Survivor
         super(/*health*/ 20,/*attack*/2);
         this.objID = ID;
     }
-    
-    @Override
-    public String toString()
-    {
-        return "Child " + objID;
-    }
+
 
 }
